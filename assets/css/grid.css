@@ -15,7 +15,6 @@ body {
 .row {
   width: 100%;
   display: flex;
-  margin-bottom: .5rem;
 }
 
 .col-1 {
