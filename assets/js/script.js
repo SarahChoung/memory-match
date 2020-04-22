@@ -9,6 +9,10 @@ var matches = 0;
 var attempts = 0;
 var gamesPlayed = 0;
 
+var cardClasses = ["css-logo", "docker-logo", "gitHub-logo", "html-logo", "js-logo", "mysql-logo", "node-logo", "php-logo", "react-logo", "css-logo", "docker-logo", "gitHub-logo", "html-logo", "js-logo", "mysql-logo", "node-logo", "php-logo", "react-logo"]
+
+var cardFront = document.querySelectorAll("div.card-front");
+
 var main = document.getElementById("gameCards");
 main.addEventListener("click", handleClick);
 
@@ -45,7 +49,6 @@ function handleClick(event) {
         main.addEventListener("click", handleClick);
         firstCardClicked = null;
         secondCardClicked = null;
-        console.log(attempts);
       }, 1500);
     }
     displayStats();
@@ -77,6 +80,7 @@ function resetGame() {
   gamesPlayed++;
   displayStats();
   resetCards();
+  shuffleCards();
   var modalWindow = document.querySelector("div.modal-overlay");
   modalWindow.classList.add("hidden");
 }
@@ -90,3 +94,22 @@ function resetCards(){
 
 var button = document.getElementById("reset");
 button.addEventListener("click", resetGame)
+
+
+function shuffleCards() {
+  for (var i = 0; i < cardClasses.length; i++) {
+    var randomPosition = Math.floor(Math.random() * cardClasses.length);
+    var placeHolder = cardClasses[i];
+    cardClasses[i] = cardClasses[randomPosition];
+    cardClasses[randomPosition] = placeHolder;
+  }
+  displayCards();
+}
+
+function displayCards() {
+  for (var i=0; i < cardFront.length; i++) {
+    cardFront[i].className = "card-front " + cardClasses[i];
+  }
+}
+
+window.addEventListener("load", shuffleCards);
