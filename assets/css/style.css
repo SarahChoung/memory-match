@@ -52,8 +52,8 @@
 
 .modal-content {
   background-color: rgb(78, 163, 243);
-  width: 50%;
   position: absolute;
+  text-align: center;
 }
 
 .hidden {
