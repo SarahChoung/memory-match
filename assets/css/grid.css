@@ -1,9 +1,4 @@
-body {
-  height: 97vh;
-  background-image: url("../images/lfz-background.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
+/* Container Section*/
 
 .container {
   width: 100%;
@@ -15,6 +10,7 @@ body {
 .row {
   width: 100%;
   display: flex;
+  align-items: center;
 }
 
 .col-1 {
@@ -54,20 +50,23 @@ body {
   width: 96%;
 }
 
-.row2 {
-  height: 90%;
+body {
+  height: 97vh;
+  background-image: url("../images/lfz-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 aside,
 main {
-  height: 100%;
+  height: 100%; /* aside, main heights are 100% of row height2 */
   margin: 0 10px;
 }
 
 /* Header Section*/
 
 .row1 {
-  height: 10%;
+  height: 10%; /* height is 10% of body height (97vh) */
   justify-content: center;
 }
 
@@ -75,10 +74,15 @@ h1 {
   font-size: 3.5rem;
 }
 
+/* Stats + Cards */
+.row2 {
+  height: 90%;
+}
+
 /* Stats Section*/
 
 .info {
-  height: calc(90%/7);
+  height: calc(90%/7); /*90% of row-2 height*/
   width: 90%;
   margin: 5% auto;
   background-color: rgb(124, 199, 232);
@@ -87,6 +91,9 @@ h1 {
   align-items: center;
 }
 
+.info > h2 {
+  text-align: center;
+}
 
 /* Card Section*/
 main {
@@ -101,4 +108,108 @@ main {
   background-repeat: no-repeat;
   margin: 3% 0.5% 0;
   position: relative;
+}
+
+/* Mobile Responsiveness */
+
+/* ---- iPhone 6, 6s, 7, 8, 10 ---- */
+
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    h1 {
+      font-size: 2rem;
+    }
+    .info > h2 {
+      font-size: 0.9rem;
+    }
+    .info {
+      height: calc(95%/7); /*90% of row-2 height*/
+      width: 100%;
+      padding: 0 5px;
+      margin: 5% auto;
+      background-color: rgb(124, 199, 232);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      height: calc(95%/6);
+      flex-basis: calc(94%/3);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin: 0.5% ;
+      position: relative;
+    }
+  }
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    h1 {
+      font-size: 2rem;
+    }
+    .info > h2 {
+      font-size: 1rem;
+    }
+  }
+
+/* iPhone 10 Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    h1 {
+        font-size: 1.5rem;
+      }
+    .info > h2 {
+      font-size: 0.9rem;
+    }
+    .row1 {
+      height: 5%;
+    }
+    .row2 {
+      height: 95%;
+    }
+    .info {
+      height: calc(85%/7);
+      width: 100%;
+      padding: 0 5px;
+      margin: 5% auto;
+      background-color: rgb(124, 199, 232);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      margin: 1.5% 0.5% 0;
+    }
+  }
+/* ----------- iPad 1 ----------- */
+
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .card {
+      height: calc(95%/6);
+      flex-basis: calc(94%/3);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin: 0 0.5%;
+      position: relative;
+    }
+    .info > h2 {
+      font-size: 1.5rem;
 }
