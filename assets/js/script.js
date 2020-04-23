@@ -1,3 +1,6 @@
+//Global Variables
+var main = document.getElementById("gameCards");
+
 var firstCardClicked;
 var secondCardClicked;
 var firstCardClasses;
@@ -11,9 +14,10 @@ var gamesPlayed = 0;
 
 var cardClasses = ["css-logo", "docker-logo", "gitHub-logo", "html-logo", "js-logo", "mysql-logo", "node-logo", "php-logo", "react-logo", "css-logo", "docker-logo", "gitHub-logo", "html-logo", "js-logo", "mysql-logo", "node-logo", "php-logo", "react-logo"]
 
-var cardFront = document.querySelectorAll("div.card-front");
+var cardFrontClass = document.getElementsByClassName("card-front");
 
-var main = document.getElementById("gameCards");
+//Game
+
 main.addEventListener("click", handleClick);
 
 function handleClick(event) {
@@ -107,9 +111,30 @@ function shuffleCards() {
 }
 
 function displayCards() {
-  for (var i=0; i < cardFront.length; i++) {
-    cardFront[i].className = "card-front " + cardClasses[i];
+  for (var i=0; i < cardFrontClass.length; i++) {
+    cardFrontClass[i].className = "card-front" + " " + cardClasses[i];
   }
 }
 
-window.addEventListener("load", shuffleCards);
+function createCards() {
+  for (var i = 0; i < cardClasses.length; i++ ) {
+    var div = document.createElement("div");
+    div.classList.add("card", "col-2");
+
+    var cardFront = document.createElement("div");
+    cardFront.classList.add("card-front", cardClasses[i]);
+
+    var cardBack = document.createElement("div");
+    cardBack.classList.add("card-back");
+
+    div.append(cardFront, cardBack);
+    main.append(div);
+  }
+}
+
+
+window.addEventListener("load", load);
+function load() {
+  createCards();
+  shuffleCards();
+}
