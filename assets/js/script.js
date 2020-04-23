@@ -8,7 +8,6 @@ var secondCardClasses;
 
 var maxMatches = 9;
 var matches = 0;
-
 var attempts = 0;
 var gamesPlayed = 0;
 
@@ -17,7 +16,7 @@ var cardClasses = ["css-logo", "docker-logo", "gitHub-logo", "html-logo", "js-lo
 var cardFrontClass = document.getElementsByClassName("card-front");
 
 //Game
-
+//Clicking Cards
 main.addEventListener("click", handleClick);
 
 function handleClick(event) {
@@ -27,7 +26,6 @@ function handleClick(event) {
   var target = event.target;
   target.classList.add("hidden")
 
-//Match 2 Cards
   if (!firstCardClicked) {
     firstCardClicked = target;
     firstCardClasses = firstCardClicked.previousElementSibling.className;
@@ -57,9 +55,7 @@ function handleClick(event) {
     }
     displayStats();
   }
-
 }
-
 
 function displayStats() {
   document.getElementById("games-played-number").textContent = gamesPlayed;
@@ -131,7 +127,6 @@ function createCards() {
     main.append(div);
   }
 }
-
 
 window.addEventListener("load", load);
 function load() {
