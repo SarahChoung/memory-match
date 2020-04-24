@@ -52,7 +52,7 @@
 
 body {
   height: 97vh;
-  background-image: url("../images/lfz-background.jpg");
+  background-image: url("../images/portfolio-images/bodybackground.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -71,28 +71,85 @@ main {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 5rem;
+  font-family: 'Creepster', cursive;
+  color: green;
+  text-shadow: 3px 2px yellowgreen;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 4px;
 }
 
 /* Stats + Cards */
 .row2 {
   height: 90%;
+  justify-content: center;
+  margin: auto;
 }
 
 /* Stats Section*/
-
+aside {
+  margin-top: 10px;
+}
 .info {
-  height: calc(90%/7); /*90% of row-2 height*/
-  width: 90%;
+  height: calc(55%/7); /*90% of row-2 height*/
+  width: 80%;
   margin: 5% auto;
-  background-color: rgb(124, 199, 232);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10rem;
+  border: 3px solid green;
+}
+
+.number {
+  border-color: transparent;
+  color: white;
+  text-shadow: 4px 4px black;
+}
+
+
+.stats {
+  width: 100%;
+  border-radius: 0;
+  border-width: 5px;
+  background-color: transparent;
+  border: none;
+}
+
+.sun-img {
+  width: 100%;
+  transform: scaleX(-1);
+  border-radius: 15%;
+}
+
+#games-played-number,
+#attempts-number,
+#accuracy-number {
+  background-image: url("../images/portfolio-images/rick-and-morty-portal-button.gif");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+h2 {
+  font-family: 'Bangers', cursive;
 }
 
 .info > h2 {
   text-align: center;
+  font-family: 'Bangers', cursive;
+  font-size: 2rem;
+}
+
+.stats > h2 {
+  font-family: 'Creepster', cursive;
+  font-size: 3rem;
+  color: green;
+  text-shadow: 3px 2px yellowgreen;
+  letter-spacing: 4px;
 }
 
 /* Card Section*/
@@ -109,6 +166,32 @@ main {
   margin: 3% 0.5% 0;
   position: relative;
 }
+
+/* Background Images */
+
+.background-rick {
+  width: 10%;
+  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 0;
+  z-index: -1;
+}
+
+/* Laptop Responsiveness */
+@media (min-width: 1025px) and (max-width: 1800px) {
+    .row2 {
+      width: 80%;
+    }
+     .info > h2 {
+      font-size: 1.5rem;
+    }
+    .stats > h2 {
+      font-size: 2.5rem;
+    }
+  }
+
 
 /* Mobile Responsiveness */
 
@@ -212,4 +295,5 @@ main {
     }
     .info > h2 {
       font-size: 1.5rem;
-}
+    }
+  }

@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <link href="assets/css/grid.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <title>Memory Match</title>
 </head>
+
 <body>
   <div class="container">
     <div class="row row1">
       <header>
-        <h1>LFZ Memory Match</h1>
+        <h1>Silence the Screaming Sun</h1>
       </header>
-    </div>
+    </div> <!-- end of row 1-->
     <div class="row row2">
       <aside class="col-2">
-          <div class="info">
-            <h2>Stats</h2>
-          </div>
-          <div class="info">
-            <h2>Games Played</h2>
-          </div>
-          <div class="info" id="games-played-number">
-            <h2>0</h2>
-          </div>
-          <div class="info">
-            <h2>Attempts</h2>
-          </div>
-          <div class="info" id="attempts-number">
-            <h2>0</h2>
-          </div>
-          <div class="info">
-            <h2>Accuracy</h2>
-          </div>
-          <div class="info" id="accuracy-number">
-            <h2>0</h2>
-          </div>
+        <div class="sun">
+          <img src="assets/images/portfolio-images/screaming-sun-cropped.gif" class="sun-img">
+        </div>
+        <div class="info stats">
+          <h2>STATS</h2>
+        </div>
+        <div class="info">
+          <h2>Games Played</h2>
+        </div>
+        <div class="info number" id="games-played-number">
+          <h2>0</h2>
+        </div>
+        <div class="info">
+          <h2>Attempts</h2>
+        </div>
+        <div class="info number " id="attempts-number">
+          <h2>0</h2>
+        </div>
+        <div class="info">
+          <h2>Accuracy</h2>
+        </div>
+        <div class="info number" id="accuracy-number">
+          <h2>0</h2>
+        </div>
       </aside>
       <main class="col-10" id="gameCards">
       </main>
-    </div>
-  </div>
-  <div class="modal-overlay hidden">
+    </div> <!-- end of row 2 -->
+    <audio loop class="hidden">
+      <source src="assets/images/portfolio-images/screaming-sun-audio.mp3" type="audio/MP3">
+    </audio>
+  </div> <!-- end of container -->
+  <div class="modal-overlay">
     <div class="modal-content">
       <h1>Congratulations! You have Won!!!</h1>
       <button id="reset">Would You Like to Play Again?</button>
     </div>
-  </div>
+  </div><!-- end of modal section-->
+  <img src="assets/images/portfolio-images/rick-background.png" alt="Unamused Rick" class="background-rick">
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>
