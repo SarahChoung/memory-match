@@ -11,6 +11,7 @@ var matches = 0;
 var attempts = 0;
 var gamesPlayed = 0;
 
+
 var cardClasses = ["rick-face", "rick-face", "morty-face", "morty-face", "summer-face", "summer-face", "beth-face", "beth-face", "jerry-face", "jerry-face", "meeseek-face", "meeseek-face", "poopybutthole-face", "poopybutthole-face", "snuffles-face", "snuffles-face", "birdperson-face", "birdperson-face"];
 
 var cardFrontClass = document.getElementsByClassName("card-front");

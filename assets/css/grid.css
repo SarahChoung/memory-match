@@ -1,5 +1,4 @@
 /* Container Section*/
-
 .container {
   width: 100%;
   max-width: 1500px;
@@ -54,7 +53,6 @@ body {
   height: 97vh;
   background-image: url("../images/portfolio-images/bodybackground.png");
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
 aside,
@@ -101,6 +99,7 @@ aside {
   align-items: center;
   border-radius: 10rem;
   border: 3px solid green;
+  padding: 1px;
 }
 
 .number {
@@ -116,6 +115,10 @@ aside {
   border-width: 5px;
   background-color: transparent;
   border: none;
+}
+
+.sun {
+  width: 100%;
 }
 
 .sun-img {
@@ -160,7 +163,7 @@ main {
 
 .card {
   height: calc(80%/3);
-  flex-basis: calc(94%/6);
+  flex-basis: calc(93%/6);
   background-size: 100%;
   background-repeat: no-repeat;
   margin: 3% 0.5% 0;
@@ -195,6 +198,52 @@ main {
 
 /* Mobile Responsiveness */
 
+/* ----------- iPad 1 ----------- */
+
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    h1 {
+      font-size: 3.5rem;
+    }
+    .row2 {
+      width: 85%;
+    }
+     .info {
+      height: calc(80%/7); /*90% of row-2 height*/
+    }
+    .card {
+      height: calc(95%/6);
+      flex-basis: calc(94%/3);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin: 0 0.5%;
+      position: relative;
+    }
+    .info > h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .row2 {
+      width: 85%;
+    }
+     .info {
+      height: calc(65%/7); /*90% of row-2 height*/
+    }
+}
+
+
 /* ---- iPhone 6, 6s, 7, 8, 10 ---- */
 
 
@@ -204,22 +253,27 @@ main {
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
+
+    .row2 {
+      width: 90%;
+    }
     h1 {
       font-size: 2rem;
     }
     .info > h2 {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     .info {
-      height: calc(95%/7); /*90% of row-2 height*/
-      width: 100%;
-      padding: 0 5px;
-      margin: 5% auto;
-      background-color: rgb(124, 199, 232);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      height: calc(80%/7);
+      padding: 0 3px;
     }
+    .number {
+      text-shadow: 2px 2px black;
+    }
+    .stats {
+      background-color: transparent;
+    }
+
     .card {
       height: calc(95%/6);
       flex-basis: calc(94%/3);
@@ -236,13 +290,24 @@ main {
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
+    .row2 {
+      width: 80%;
+      margin-right: 10%;
+    }
     h1 {
       font-size: 2rem;
     }
     .info > h2 {
-      font-size: 1rem;
+      font-size: 0.8rem;
+    }
+    .number {
+      text-shadow: 2px 2px black;
+    }
+    .info {
+      height: calc(50%/7);
     }
   }
+
 
 /* iPhone 10 Landscape */
 @media only screen
@@ -261,39 +326,15 @@ main {
     }
     .row2 {
       height: 95%;
+      width: 80%;
     }
     .info {
-      height: calc(85%/7);
-      width: 100%;
-      padding: 0 5px;
-      margin: 5% auto;
-      background-color: rgb(124, 199, 232);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      height: calc(50%/8);
+    }
+    .number {
+      text-shadow: 2px 2px black;
     }
     .card {
       margin: 1.5% 0.5% 0;
-    }
-  }
-/* ----------- iPad 1 ----------- */
-
-
-/* Portrait */
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 1) {
-    .card {
-      height: calc(95%/6);
-      flex-basis: calc(94%/3);
-      background-size: 100%;
-      background-repeat: no-repeat;
-      margin: 0 0.5%;
-      position: relative;
-    }
-    .info > h2 {
-      font-size: 1.5rem;
     }
   }
