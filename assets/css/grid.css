@@ -66,6 +66,7 @@ main {
 .row1 {
   height: 10%; /* height is 10% of body height (97vh) */
   justify-content: center;
+  text-align: center;
 }
 
 h1 {
@@ -78,6 +79,14 @@ h1 {
   letter-spacing: 4px;
 }
 
+p {
+  color: white;
+  font-family: "Bangers", cursive;
+  font-size: 1.2rem;
+  margin: 0;
+  letter-spacing: 0.5rem;
+}
+
 /* Stats + Cards */
 .row2 {
   height: 90%;
@@ -86,11 +95,9 @@ h1 {
 }
 
 /* Stats Section*/
-aside {
-  margin-top: 10px;
-}
+
 .info {
-  height: calc(55%/7); /*90% of row-2 height*/
+  height: calc(50%/7);
   width: 80%;
   margin: 5% auto;
   background-color: white;
@@ -119,6 +126,7 @@ aside {
 
 .sun {
   width: 100%;
+  margin-top: 15%;
 }
 
 .sun-img {
@@ -198,7 +206,7 @@ main {
 
 /* Mobile Responsiveness */
 
-/* ----------- iPad 1 ----------- */
+/* ----------- iPad ----------- */
 
 
 /* Portrait */
@@ -214,7 +222,7 @@ main {
       width: 85%;
     }
      .info {
-      height: calc(80%/7); /*90% of row-2 height*/
+      height: calc(80%/7);
     }
     .card {
       height: calc(95%/6);
@@ -239,7 +247,11 @@ main {
       width: 85%;
     }
      .info {
-      height: calc(65%/7); /*90% of row-2 height*/
+      height: calc(60%/7);
+      padding: 0 5px;
+    }
+    .row1 {
+      padding: 10px 0;
     }
 }
 
@@ -258,10 +270,14 @@ main {
       width: 90%;
     }
     h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .info > h2 {
       font-size: 0.8rem;
+    }
+
+    .sun {
+      padding: 0 3px;
     }
     .info {
       height: calc(80%/7);
@@ -281,6 +297,12 @@ main {
       background-repeat: no-repeat;
       margin: 0.5% ;
       position: relative;
+    }
+
+    p {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      margin-top: 4px;
     }
   }
 
@@ -306,6 +328,14 @@ main {
     .info {
       height: calc(50%/7);
     }
+    .stats > h2{
+      text-shadow: 2px 1px yellowgreen;
+    }
+    p {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
   }
 
 
@@ -316,17 +346,21 @@ main {
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
     h1 {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
       }
     .info > h2 {
       font-size: 0.9rem;
     }
     .row1 {
-      height: 5%;
+      height: 10%;
+      padding-top: 0;
     }
     .row2 {
-      height: 95%;
+      height: 90%;
       width: 80%;
+    }
+    aside {
+      margin-top: 0;
     }
     .info {
       height: calc(50%/8);
@@ -336,5 +370,13 @@ main {
     }
     .card {
       margin: 1.5% 0.5% 0;
+    }
+    p {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+    .sun {
+      margin-top: 6%;
     }
   }
