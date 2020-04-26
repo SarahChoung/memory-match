@@ -67,6 +67,7 @@ main {
   height: 10%; /* height is 10% of body height (97vh) */
   justify-content: center;
   text-align: center;
+  padding-top: 10px;
 }
 
 h1 {
@@ -326,7 +327,7 @@ main {
       text-shadow: 2px 2px black;
     }
     .info {
-      height: calc(50%/7);
+      height: calc(45%/7);
     }
     .stats > h2{
       text-shadow: 2px 1px yellowgreen;
