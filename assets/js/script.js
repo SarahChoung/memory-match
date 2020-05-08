@@ -11,15 +11,15 @@ var matches = 0;
 var attempts = 0;
 var gamesPlayed = 0;
 
-var cardClasses = ["css-logo", "docker-logo", "gitHub-logo", "html-logo", "js-logo", "mysql-logo", "node-logo", "php-logo", "react-logo", "css-logo", "docker-logo", "gitHub-logo", "html-logo", "js-logo", "mysql-logo", "node-logo", "php-logo", "react-logo"]
+
+var cardClasses = ["rick-face", "rick-face", "morty-face", "morty-face", "summer-face", "summer-face", "beth-face", "beth-face", "jerry-face", "jerry-face", "meeseek-face", "meeseek-face", "poopybutthole-face", "poopybutthole-face", "snuffles-face", "snuffles-face", "birdperson-face", "birdperson-face"];
 
 var cardFrontClass = document.getElementsByClassName("card-front");
 
-//Game
-//Clicking Cards
-main.addEventListener("click", handleClick);
+// Function Definitions
 
 function handleClick(event) {
+  playAudio();
   if (event.target.className.indexOf("card-back") === -1) {
     return;
   }
@@ -41,35 +41,42 @@ function handleClick(event) {
       secondCardClicked = null;
       matches++;
       if (matches === maxMatches) {
+        stopAudio();
         var modalWindow = document.querySelector("div.modal-overlay");
         modalWindow.classList.remove("hidden");
       }
     } else {
-      setTimeout(function() {
+      setTimeout(function () {
         firstCardClicked.classList.remove("hidden");
         secondCardClicked.classList.remove("hidden");
         main.addEventListener("click", handleClick);
         firstCardClicked = null;
         secondCardClicked = null;
-      }, 1500);
+      }, 1000);
     }
     displayStats();
   }
 }
 
 function displayStats() {
-  document.getElementById("games-played-number").textContent = gamesPlayed;
+  var gamesPlayedNumber = document.getElementById("games-played-number").textContent = gamesPlayed;
+  document.getElementById("games-played-number").style.fontFamily = "Bangers, cursive";
+  document.getElementById("games-played-number").style.fontSize = "2rem";
 
-  attemptsEl = document.getElementById("attempts-number").textContent = attempts;
+  var attemptsNumber = document.getElementById("attempts-number").textContent = attempts;
+  document.getElementById("attempts-number").style.fontFamily = "Bangers, cursive";
+  document.getElementById("attempts-number").style.fontSize = "2rem";
 
-  document.getElementById("accuracy-number").textContent = calculateAccuracy(attempts, matches);
+  var accuracyNumber = document.getElementById("accuracy-number").textContent = calculateAccuracy(attempts, matches);
+  document.getElementById("accuracy-number").style.fontFamily = "Bangers, cursive";
+  document.getElementById("accuracy-number").style.fontSize = "2rem";
 }
 
 function calculateAccuracy(attempts, matches) {
   if (!attempts) {
     return "0%";
   }
-  var result = Math.trunc((matches/attempts) * 100);
+  var result = Math.trunc((matches / attempts) * 100);
   result += "%"
   return result;
 }
@@ -85,16 +92,12 @@ function resetGame() {
   modalWindow.classList.add("hidden");
 }
 
-function resetCards(){
+function resetCards() {
   var hiddenCards = document.querySelectorAll("div.card-back");
-  for (index=0; index < hiddenCards.length; index++) {
+  for (index = 0; index < hiddenCards.length; index++) {
     hiddenCards[index].classList.remove("hidden");
   }
 }
-
-var button = document.getElementById("reset");
-button.addEventListener("click", resetGame)
-
 
 function shuffleCards() {
   for (var i = 0; i < cardClasses.length; i++) {
@@ -107,13 +110,13 @@ function shuffleCards() {
 }
 
 function displayCards() {
-  for (var i=0; i < cardFrontClass.length; i++) {
+  for (var i = 0; i < cardFrontClass.length; i++) {
     cardFrontClass[i].className = "card-front" + " " + cardClasses[i];
   }
 }
 
 function createCards() {
-  for (var i = 0; i < cardClasses.length; i++ ) {
+  for (var i = 0; i < cardClasses.length; i++) {
     var div = document.createElement("div");
     div.classList.add("card", "col-2");
 
@@ -128,8 +131,25 @@ function createCards() {
   }
 }
 
+function playAudio() {
+  audioFile.play();
+}
+
+function stopAudio() {
+  audioFile.pause();
+  audioFile.currenTime = 0;
+}
+
+//Function Calls, Statements
 window.addEventListener("load", load);
 function load() {
   createCards();
   shuffleCards();
 }
+
+main.addEventListener("click", handleClick);
+
+var button = document.getElementById("reset");
+button.addEventListener("click", resetGame)
+
+var audioFile = document.querySelector("audio");
